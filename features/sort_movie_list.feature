@@ -22,10 +22,13 @@ Background: movies have been added to database
   And I am on the RottenPotatoes home page
 
 Scenario: sort movies alphabetically
-  When I follow "Movie Title"
   # your steps here
+  When all the movies are displayed
+  And I follow "title_header"
+  Then the movies should be sorted alphabetically
 
 Scenario: sort movies in increasing order of release date
-  When I follow "Release Date"
   # your steps here
-
+  When all the movies are displayed
+  And I follow "release_date_header"
+  Then the movies should be sorted in increasing order of release date
